@@ -5,6 +5,7 @@ import typescript from '@/assets/images/typescript.svg'
 import tailwindcss from '@/assets/images/tailwindcss.svg'
 
 import Image from '../components/image'
+import { gitUrl } from '../config'
 
 console.log(vite, react, vercel, typescript, tailwindcss)
 
@@ -22,7 +23,7 @@ export default function HomePage() {
         </p>
         <a
           className='rounded bg-blue-100 py-3 px-4 font-bold uppercase tracking-wide text-blue-700 shadow-md shadow-blue-800 transition-colors hover:bg-blue-900 hover:text-blue-100'
-          href={''}
+          href={gitUrl}
           rel='noopener noreferrer'
           target='_blank'
         >
