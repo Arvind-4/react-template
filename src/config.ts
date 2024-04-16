@@ -1,0 +1,2 @@
+const gitUrl = ''
+export { gitUrl }

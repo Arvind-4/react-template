@@ -1,0 +1,14 @@
+{
+    "editor.fontSize": 23,
+    "terminal.integrated.fontSize": 23,
+    "files.autoSave": "onFocusChange",
+    "files.exclude": {
+        "**/.git": false,
+        "**/.svn": false,
+        "**/.hg": false,
+        "**/CVS": false,
+        "**/.DS_Store": false,
+        "**/Thumbs.db": false,
+        "**/*.crswap": false
+    }
+}
