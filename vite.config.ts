@@ -38,6 +38,15 @@ export default defineConfig({
     postcss
   },
   resolve: {
-    alias: [{ find: '@/assets', replacement: '/src/assets/' }]
+    alias: [
+      {
+        find: '@/assets',
+        replacement: '/src/assets/'
+      },
+      {
+        find: '@',
+        replacement: '/src/'
+      }
+    ]
   }
 })
