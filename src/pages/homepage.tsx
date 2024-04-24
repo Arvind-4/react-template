@@ -3,13 +3,17 @@ import react from '@/assets/images/react.svg'
 import vercel from '@/assets/images/vercel.svg'
 import typescript from '@/assets/images/typescript.svg'
 import tailwindcss from '@/assets/images/tailwindcss.svg'
+import { Button } from '@/components/ui/button'
+import { Toaster } from '@/components/ui/toaster'
 
 import Image from '../components/image'
 import { gitUrl } from '../config'
+import { useToast } from '@/components/ui/use-toast'
 
 console.log(vite, react, vercel, typescript, tailwindcss)
 
 export default function HomePage() {
+  const { toast } = useToast()
   return (
     <main className='grid min-h-screen place-content-center bg-gradient-to-b from-yellow-700 to-blue-800'>
       <section className='mx-8 flex flex-col items-center justify-center gap-7 text-center text-blue-100'>
@@ -21,14 +25,20 @@ export default function HomePage() {
           Avoid setting up a project from scratch. Get started with this boilerplate that includes
           Vite, React, Typescript, Tailwindcss, and Vercel.
         </p>
-        <a
-          className='rounded bg-blue-100 py-3 px-4 font-bold uppercase tracking-wide text-blue-700 shadow-md shadow-blue-800 transition-colors hover:bg-blue-900 hover:text-blue-100'
-          href={gitUrl}
-          rel='noopener noreferrer'
-          target='_blank'
-        >
-          Get the boilerplate →
+        <a href={gitUrl} target='_blank' className='flex items-center gap-2'>
+          <Button rel='noopener noreferrer'>Get the boilerplate →</Button>
         </a>
+        <Button
+          className='bg-blue-350 hover:bg-blue-600 focus:ring-blue-500 focus:ring-offset-blue-200'
+          onClick={() => {
+            toast({
+              title: 'Scheduled: Catch up',
+              description: 'Friday, February 10, 2023 at 5:57 PM'
+            })
+          }}
+        >
+          Show Toast
+        </Button>
         <div className='flex gap-8 pt-4'>
           <Image src={vite} alt='Vite Icon' />
           <Image src={react} alt='React Icon' />
@@ -37,6 +47,7 @@ export default function HomePage() {
           <Image src={vercel} alt='Vercel Icon' />
         </div>
       </section>
+      <Toaster />
     </main>
   )
 }
